@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;900&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif SC", serif;
+  
+  --color-xmu-blue: #003366; /* Official XMU Blue */
+  --color-craft-gold: #c5a059;
+  --color-xmu-bg: #f8fafc;
+  --color-xmu-dark: #333333;
+}
+
+@layer base {
+  body {
+    @apply bg-xmu-bg text-xmu-dark font-sans;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif font-black;
+  }
+}
+
+/* PRD Custom Textures */
+.texture-ripple {
+  background-color: #ecfdf5;
+  background-image: radial-gradient(circle at 2px 2px, #10b981 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.texture-stairs {
+  background: linear-gradient(135deg, #f1f5f9 25%, transparent 25%) -50px 0,
+              linear-gradient(225deg, #f1f5f9 25%, transparent 25%) -50px 0,
+              linear-gradient(315deg, #f1f5f9 25%, transparent 25%),
+              linear-gradient(45deg, #f1f5f9 25%, transparent 25%);
+  background-size: 100px 100px;
+  background-color: #ffffff;
+}
+
+.texture-tiles {
+  background: 
+    linear-gradient(45deg, #fef2f2 25%, transparent 25%, transparent 75%, #fef2f2 75%, #fef2f2), 
+    linear-gradient(45deg, #fef2f2 25%, transparent 25%, transparent 75%, #fef2f2 75%, #fef2f2);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  background-color: #ffffff;
+}
+
+.beer-foam-loading {
+  animation: foam-rise 2s infinite ease-in-out;
+}
+
+@keyframes foam-rise {
+  0% { transform: translateY(100%); opacity: 0.5; }
+  100% { transform: translateY(-20%); opacity: 0; }
+}
+
+.sleek-banner {
+  background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)),
+              url('https://picsum.photos/seed/xmu-land/1200/600') center/cover;
+}
